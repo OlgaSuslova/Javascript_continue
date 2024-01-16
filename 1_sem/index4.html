@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Дан тег <div class="content"></div> 
+    Создайте с помощью javascript новый элемент button
+    Добавьте текст для кнопки “Отправить”
+    При клике на данную кнопку необходимо чтобы текст поменялся на “Текст отправлен” -->
+    <div class="content"></div>
+
+    <script>
+        const contentEl = document.querySelector('.content');
+        const buttonEl = document.createElement('button');
+        buttonEl.textContent = "Отправить";
+        contentEl.append(buttonEl);
+        buttonEl.onclick = function () {
+            buttonEl.textContent = "Текст отправлен";
+        }
+    </script>
+</body>
+</html>

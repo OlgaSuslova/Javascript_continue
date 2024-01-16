@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Дан тег <a class="link" href="#">link text html</a>
+    Вам необходимо поменять текст внутри ссылки на “link text js”
+    Заменить href, на значение https://developer.mozilla.org/ru/ 
+    Дан тег <img class="photo" src="" alt=""> 
+    Вам необходимо с помощью js поменять значение src на любое изображение из интернета -->
+
+    <a class="link" href="#">link text html</a>
+    <img class="photo" src="" alt="">
+
+    <script>
+        const linkEl = document.querySelector('.link');
+        linkEl.textContent = 'link text js';
+        linkEl.href = 'https://developer.mozilla.org/ru/';
+
+        const photoEl = document.querySelector('.photo');
+        photoEl.src = 'https://plastifimo.ru/up/images/p/u/sb-ng16/sb-ng16-b.jpg';
+        console.log(photoEl);
+
+    </script>
+</body>
+</html>

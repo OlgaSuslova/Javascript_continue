@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Создать элемент button, добавить в блок <div class="content"></div>
+    При клике на который в консоль выводится сколько раз пользователь нажал на данную кнопку -->
+    <div class="content"></div>
+    <script>
+        const contentEl = document.querySelector('.content');
+        const buttonEl = document.createElement('button');
+        buttonEl.textContent = "Button"
+        contentEl.append(buttonEl);
+        let sum = 0;
+        buttonEl.onclick = function () {
+            sum = sum + 1;
+            console.log(sum);
+        }
+        
+
+    </script>
+</body>
+</html>

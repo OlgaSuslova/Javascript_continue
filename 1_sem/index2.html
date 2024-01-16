@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Дан тег <div class="content"></div> 
+    Создайте новый элемент p
+    Добавьте в него текст “Новый текстовый элемент”
+    Добавьте созданный элемент внутри <div class="content"></div>
+    Удалите добавленный узел  -->
+    <div class="content"></div>
+
+    <script>
+        const contentEl = document.querySelector('.content');
+        const p = document.createElement('p');
+        p.textContent = 'Новый текстовый элемент';
+        contentEl.appendChild(p);
+        contentEl.remove();
+
+    </script>
+</body>
+</html>
