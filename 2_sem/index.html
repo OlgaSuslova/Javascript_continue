@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .item_1 {
+            color: blue;
+            border: 1px black solid;
+            background-color: #f8f8f8;
+            padding: 16px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="block">
+
+    </div>
+
+
+   <script>
+    const blockElement = document.querySelector('.block');
+    const itemElement = document.createElement('div');
+    itemElement.className = 'item';
+    itemElement.textContent = 'Элемент внутри';
+    itemElement.style.color = 'blue';
+    itemElement.style.border = '1px solid black';
+    itemElement.style.backgroundColor = '#f8f8f8';
+    itemElement.style.padding = '16px';
+    
+    blockElement.setAttribute('class', 'item item_1');
+    blockElement.append(itemElement);
+
+
+
+// const block = document.querySelector('.block')
+// const divEl = document.createElement('div')
+// divEl.classList.add('item')
+// divEl.textContent = 'Элемент внтури'
+// divEl.style.color = 'blue'
+// divEl.style.border = '1px solid black'
+// divEl.style.backgroundColor = '#f8f8f8'
+// divEl.style.padding = '16px'
+// divEl.setAttribute('class', 'item_1 item')
+// block.appendChild(divEl)
+   </script>
+
+    
+</body>
+</html>

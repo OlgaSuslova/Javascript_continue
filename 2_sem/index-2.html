@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="item">
+        <div class="elem">
+          <div class="info">
+            <h2 class="subtitle">Lorem, ipsum dolor.</h2>
+          </div>
+        </div>
+    </div>
+    <script>
+        // С помощью querySelector найти элемент h2  и вывести в консоль всех его родителей
+        let h2Element = document.querySelector('.subtitle');
+        // console.log(h2Element);       
+
+        while (h2Element.parentElement !== null) {
+            console.log(h2Element.parentElement);
+            h2Element = h2Element.parentElement;
+        }
+    </script>
+
+
+      
+</body>
+</html>
