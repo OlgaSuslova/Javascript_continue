@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Создать кнопку, которая добавляет заголовок h1 с текстом, “Новый заголовок, данный элемент нужно расположить после кнопки
+    Создать вторую кнопку, которая будет удалять созданный заголовок h1
+    Создать третью кнопку, при наведении на которую в консоль будет выводиться текст “вы навели на данную кнопку” , как только вы убираем курсор мыши с кнопки, в консоли должен появиться текст “Наведения на кнопку больше нет”    -->
+    <div class="btn"><button class="btn1">Кнопка 1</button></div>
+    <div class="btn2"><button class="btn2">Кнопка 2</button></div>
+    <div class="btn3"><button class="btn3">Кнопка 3</button></div>
+
+    <script>
+        // Создать кнопку, которая добавляет заголовок h1 с текстом, “Новый заголовок, данный элемент нужно расположить после кнопки
+        const btn1El = document.querySelector('.btn');
+        const h1El = document.createElement('h1');
+        h1El.textContent = 'Новый заголовок';
+        btn1El.addEventListener('click', function(e) {
+            btn1El.append(h1El);
+        })
+
+        // Создать вторую кнопку, которая будет удалять созданный заголовок h1
+        const btn2El = document.querySelector('.btn2');
+        btn2El.addEventListener('click', function(e) {
+            btn1El.remove(h1El);
+        })
+
+        // Создать третью кнопку, при наведении на которую в консоль будет выводиться текст “вы навели на данную кнопку” , как только вы убираем курсор мыши с кнопки, в консоли должен появиться текст “Наведения на кнопку больше нет”
+        const btn3El = document.querySelector('.btn3');
+        btn3El.addEventListener('mouseenter', function(e) {
+            console.log('вы навели на данную кнопку');
+        })
+        btn3El.addEventListener('mouseleave', function(e) {
+            console.log('Наведения на кнопку больше нет');
+        })
+
+
+    </script>
+
+
+
+</body>
+</html>

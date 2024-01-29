@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="button1">add</button>
+    <button class="button2">delete</button>
+    <button class="button3">click</button>
+    <ul class="ul">
+        <li class="li">1</li>
+        <li class="li">2</li>
+        <li class="li">3</li>
+    </ul>
+    
+    
+
+<!-- Создать в html список состоящий из 3-х произвольных элементов li
+Нужно создать кнопку которая будет добавлять элементы списка с текстом “новый элемент списка”
+Создать кнопку, которая будет удалять первый элемент из созданного списка
+Создать кнопку, при клике на которую ей добавляется класс “click -->
+
+    <script>
+        const ulEl = document.querySelector('.ul');
+
+        const btn1El = document.querySelector('.button1');
+        const btn2El = document.querySelector('.button2');
+        const btn3El = document.querySelector('.button3');
+
+        const textEl = document.createElement('li');
+        textEl.textContent = 'новый элемент списка';
+        
+
+        btn1El.addEventListener('click', function(e) {
+            const textEl = document.createElement('li');
+            textEl.textContent = 'новый элемент списка';
+            ulEl.append(textEl);
+            ulEl.classList.add('ul');
+        });
+
+        btn2El.addEventListener('click', function(e) {
+            const newUl = document.querySelector('.ul');
+            newUl.remove();
+        })
+
+
+        
+
+        // const listEls = document.querySelector('.list');
+        // const buttonEl10 = document.querySelector('.button10');
+        // const buttonEl11 = document.querySelector('.button11');
+        // const buttonEl12 = document.querySelector('.button12');
+
+        // buttonEl10.addEventListener('click', function (e) {
+            // const newLi = document.createElement('li');
+            // newLi.textContent ='новый элемент списка';
+            // listEls.append(newLi);
+            // newLi.classList.add('item');
+        // });
+
+        // buttonEl11.addEventListener('click', function (e) {
+        // const listEl = document.querySelector('.item');
+        // listEl.remove();
+        // })
+
+        // buttonEl12.addEventListener('click', function (e) {
+        // buttonEl12.classList.add('click');
+        // })
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

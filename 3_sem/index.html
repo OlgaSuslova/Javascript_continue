@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- В html создать кнопку button
+    После загрузки страницы вывести в консоль текст “страница загрузилась”
+    Добавить событие onclick которое выводит в консоль текст “событие onclick”
+    Добавить событие addEventListener которое выводит в консоль текст “событие addEventListener” -->
+    <button class="btn">Купить</button>
+
+    <script>
+        const btnEl = document.querySelector('.btn');
+
+        // window.onload = () => {
+        //     console.log('страница загрузилась');
+        // }
+
+        window.addEventListener('load', function (e) {
+            console.log('страница загрузилась');
+        });
+
+        btnEl.onclick = () => {
+            console.log('событие onclick');
+        }
+
+        btnEl.addEventListener('click', function(e) {
+            console.log('событие addEventListener');
+        })
+    </script>
+
+
+</body>
+</html>
