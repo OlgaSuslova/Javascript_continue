@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- В html создать 2 элемента радио кнопки (input type=”radio”) и текст “Чай”, “Кофе” соответственно
+Кнопка отправить
+Если выбран чай, необходимо вывести сообщение “Чай закончился”
+Если выбран кофе, необходимо вывести сообщение “Кофе закончился” -->
+    <form action="#" class="form">
+        <label><input type="radio" name="drinks" value="tea">Чай</label>
+        <label><input type="radio" name="drinks" value="coffee">Кофе</label>
+        <br>
+        <div class="error"></div>
+        <button type="submit" class="button">Отправить</button>
+    </form>
+
+    <script>
+        const formEl = document.querySelector('.form');
+        const teaEl = document.querySelector('input[value="tea"]');
+        const coffeeEl = document.querySelector('input[value="coffee"]');
+        const btnEl = document.querySelector('.button');
+        const errorEl = document.querySelector('.error');
+        formEl.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (teaEl.checked) {
+                errorEl.textContent = 'Чай закончился';
+            }
+            if (coffeeEl.checked) {
+                errorEl.textContent = 'Кофе закончился';
+            }
+        });
+        // teaEl.addEventListener('click', function (e) {
+        //     if (teaEl.checked) {
+        //         errorEl.textContent = 'Чай закончился'
+        //     }
+        // });
+        // coffeeEl.addEventListener('submit', function (e) {
+        //     if (coffeeEl.checked) {
+        //         errorEl.textContent = 'Кофе закончился'
+        //     }
+        // });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- В html создать элемент checkbox и текст рядом с ним “Согласен с условиями”
+Добавить кнопку отправить
+При клике на кнопку отправить нужно проверять выбран ли активным элемент checkbox
+Если элемент не выбран, добавить текст под чекбоксом “Необходимо согласиться с условиями”    -->
+
+    <form action="#" class="form">
+        <input type="checkbox" name="checkbox" id="checkbox" class="check">
+        <label for="checkbox">Согласен с условиями</label>
+        <br>
+        <div class="error"></div>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        const checkEl = document.querySelector('.check');
+        const formEl = document.querySelector('.form');
+        const errorEl = formEl.querySelector('.error');
+
+        formEl.addEventListener('submit', function (e) {
+            e.preventDefault();
+            errorEl.textContent = checkEl.checked ? '' : 'Необходимо согласиться с условиями';
+        });
+
+    </script>
+</body>
+</html>
