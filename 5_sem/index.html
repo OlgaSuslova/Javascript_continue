@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    .content {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .product {
+        width: 250px;
+        border: 1px solid black;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;   
+        align-items: center;     
+        gap: 10px;
+    }
+
+    .product__img {
+        width: 190px;
+    }
+
+    /* .product__content {
+        
+    } */
+    </style>
+    
+</head>
+<body>
+    <!-- Создать файл index.html
+    Подключить data.js
+    Добавить блок <div class="content"></div>
+    Создать переменную data и добавить в нее JSON данные из файла data.js
+    Вывести в консоль массив data
+    С помощью foreach обойти массив data
+    Вывести любые текстовые значение из данных в консоль -->
+
+    <div class="content"></div>
+
+    <script src="data.js"></script>
+    <script>
+        const data = JSON.parse(dataInfo);
+        // console.log(data);
+        // data.forEach(element => {
+        //     console.log(element.price);
+        // });
+//         Задание 4 
+//         1. Создать все необходимые заголовки, параграфы изображения (из данных json)
+//         2. Добавить все содержимое в блок контент
+//         3. Добавить стили при необходимости 
+        const contentElem = document.querySelector('.content');
+
+        data.forEach(data => {
+            const productElem = document.createElement('div');
+            productElem.classList.add('product');
+
+            const productImg = document.createElement('img');
+            productImg.classList.add('product__img');
+            productImg.setAttribute('alt', data.thumbnail);
+            productImg.src = data.images;
+
+            const productContent = document.createElement('div');
+            productContent.classList.add('product__content');
+
+            const productName = document.createElement('h1');
+            productName.classList.add('product__name')
+            productName.textContent = data.title;
+
+            const productDesc = document.createElement('p');
+            productDesc.classList.add('product__desc');
+            productDesc.textContent = data.description;
+
+            const productPrice = document.createElement('p');
+            productPrice.classList.add('product__price');
+            productDesc.textContent = data.price;
+
+
+            contentElem.append(productElem);
+            productElem.append(productImg);
+            productElem.append(productContent);
+            productContent.append(productName, productDesc, productPrice);
+        });
+
+
+        
+    </script>
+    
+</body>
+</html>
