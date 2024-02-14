@@ -6,7 +6,8 @@ const dataProducts = `
         "name": "ELLERY X M'O CAPSULE",
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
-        "currency": "usd"
+        "currency": "$",
+        "alt": "photo product"
     },
     {
         "id": 2,
@@ -14,7 +15,8 @@ const dataProducts = `
         "name": "ELLERY X M'O CAPSULE",
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
-        "currency": "usd"
+        "currency": "$",
+        "alt": "photo product"
     },
     {
         "id": 3,
@@ -22,7 +24,8 @@ const dataProducts = `
         "name": "ELLERY X M'O CAPSULE",
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
-        "currency": "usd"
+        "currency": "$",
+        "alt": "photo product"
     },
     {
         "id": 4,
@@ -30,7 +33,8 @@ const dataProducts = `
         "name": "ELLERY X M'O CAPSULE",
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
-        "currency": "usd"
+        "currency": "$",
+        "alt": "photo product"
     },
     {
         "id": 5,
@@ -38,7 +42,8 @@ const dataProducts = `
         "name": "ELLERY X M'O CAPSULE",
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
-        "currency": "usd"
+        "currency": "$",
+        "alt": "photo product"
     },
     {
         "id": 6,
@@ -46,7 +51,8 @@ const dataProducts = `
         "name": "ELLERY X M'O CAPSULE",
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
-        "currency": "usd"
+        "currency": "$",
+        "alt": "photo product"
     }
 ]
 `

@@ -12,10 +12,55 @@
 <body>
     <div class="featured-items">
         <h2 class="product-title">Fetuared Items</h2>
-        <p class="product-text">Shop for items based on what we featured in this week</p>
+        <p class="product-subtitle">Shop for items based on what we featured in this week</p>
     </div>
 
     <div class="products"></div>
+
+
+    <script src="data.js"></script>
+    <script>
+        const products = JSON.parse(dataProducts);
+        
+        const productsEl = document.querySelector('.products');
+
+        products.forEach(product => {
+            const productEl = document.createElement('div');
+            productEl.classList.add('product');
+
+            const imgEl = document.createElement('img');
+            imgEl.classList.add('product__img');
+            imgEl.alt = product.alt;
+            imgEl.src = product.image;
+
+            const linkEl = document.createElement('a');
+            linkEl.classList.add('product__link');
+            linkEl.href = "#";
+            linkEl.textContent = product.name;
+
+            const textEl = document.createElement('p');
+            textEl.classList.add('product__text');
+            textEl.textContent = product.description;
+
+            const priceEl = document.createElement('p');
+            priceEl.classList.add('product__price');
+            priceEl.textContent = product.price + product.currency;
+
+
+
+
+
+            productsEl.append(productEl);
+            productEl.append(imgEl);
+            productEl.append(linkEl);
+            productEl.append(textEl);
+            productEl.append(priceEl)
+
+
+            
+        });
+
+    </script>
     
 </body>
 </html>
