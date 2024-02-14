@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="product">
+            <img src="img/img_1.jpg" class="product__img" alt="photo product">
+            <div class="product__content">
+                <a href="" class="product__link">MANGO  PEOPLE  T-SHIRT</a>
+                <div class="product__desc">
+                    <p class="product__text">Price: <span>$</span><span>300</span></p>
+                    <p class="product__text">Color: <span>Red</span></p>
+                    <p class="product__text">Size: <span>Xl</span></p>
+                    <p class="product__text">Quantity:	
+                        <input type="number" value="2" class="product__text-input">
+                    </p>
+                </div>
+            </div>
+            <a href="#"><img src="img/img_cross.svg" alt="photo cross" class="product__close-img"></a>
+            
+        </div> -->
+    </div>
+    <!-- <div class="container2"></div> -->
+
+
+    <script src="data.js"></script>
+    <script>
+        const data = JSON.parse(dataProducts);
+        const containerEl = document.querySelector('.container');
+
+        data.forEach(data => {
+            const productEl = document.createElement('div');
+            productEl.classList.add('product');
+
+            const imgEl = document.createElement('img');
+            imgEl.classList.add('product__img');
+            imgEl.src = data.image;
+            imgEl.alt = 'photo product';
+
+            const productContentEl = document.createElement('div');
+            productContentEl.classList.add('product__content');
+
+            const productCloseEl = document.createElement('a');
+            productCloseEl.classList.add('product__close-img');
+            productCloseEl.textContent = 'X';
+
+            const productLinkEl = document.createElement('a');
+            productLinkEl.classList.add('product__link');
+            productLinkEl.href = '#';
+            productLinkEl.textcontent = data.brand;
+
+            const productDescEl = document.createElement('div');
+            productDescEl.classList.add('product__desc');
+
+            const productPriceEl = document.createElement('p');
+            productPriceEl.classList.add('product__text');
+            productPriceEl.textcontent = `Price: ${data.price + data.currency}`;
+
+            const productColorEl = document.createElement('p');
+            productColorEl.classList.add('product__text');
+            productColorEl.textcontent = data.color;
+
+            const productSizeEl = document.createElement('p');
+            productSizeEl.classList.add('product__text');
+            productSizeEl.textcontent = data.size;
+
+            const productQuantityEl = document.createElement('p');
+            productQuantityEl.classList.add('product__text');
+            productQuantityEl.textcontent = "Quantity: ";
+
+            const productInputEl = document.createElement('input');
+            productInputEl.classList.add('product__text-input');
+            productInputEl.type = "number";
+            productInputEl.value = data.quantity;            
+
+            
+            containerEl.append(productEl);
+            productContentEl.appendChild(productLinkEl)
+            productEl.append(imgEl);
+            productEl.appendChild(productLinkEl)
+            
+
+
+            
+            productQuantityEl.append(productInputEl);
+            // productEl.append(productCloseEl);
+
+        });
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
