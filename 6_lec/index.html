@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <audio class="audio" controls src="http://phantomx5.ucoz.ru/Lisa_Miskovsky-.mp3" preload="auto"></audio>
+    
+
+
+    <script>
+        const audioEl = document.querySelector('.audio');
+
+        audioEl.addEventListener('play', function (e) {
+            console.log('вы нажалии аудиоплэй');
+        });
+        audioEl.addEventListener('pause', function (e) {
+            console.log("вы нажали паузу");
+        });
+    </script>
+
+
+</body>
+</html>

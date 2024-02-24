@@ -7,6 +7,9 @@ const dataProducts = `
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "currency": "$",
+        "color": "red",
+        "size": "XL",
+        "quantity": 1,
         "alt": "photo product"
     },
     {
@@ -16,6 +19,9 @@ const dataProducts = `
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "currency": "$",
+        "color": "red",
+        "size": "XL",
+        "quantity": 1,
         "alt": "photo product"
     },
     {
@@ -25,6 +31,9 @@ const dataProducts = `
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "currency": "$",
+        "color": "red",
+        "size": "XL",
+        "quantity": 1,
         "alt": "photo product"
     },
     {
@@ -34,6 +43,9 @@ const dataProducts = `
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "currency": "$",
+        "color": "red",
+        "size": "XL",
+        "quantity": 1,
         "alt": "photo product"
     },
     {
@@ -43,6 +55,9 @@ const dataProducts = `
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "currency": "$",
+        "color": "red",
+        "size": "XL",
+        "quantity": 1,
         "alt": "photo product"
     },
     {
@@ -52,6 +67,9 @@ const dataProducts = `
         "description": "Known for her sculptural takes on traditional tailoring,Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
         "price": 52,
         "currency": "$",
+        "color": "red",
+        "size": "XL",
+        "quantity": 1,
         "alt": "photo product"
     }
 ]

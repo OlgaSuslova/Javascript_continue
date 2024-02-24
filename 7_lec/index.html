@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position);
+            const { latitude, longitude } = position.coords;
+            console.log('Географические координаты устройства', latitude, longitude);
+        })
+
+        //наблюдение за текущим местоположением
+        let watchId = navigator.geolocation.watchPosition(({coords}) => {
+            console.log('Устройство обновило местоположение', coords.latitude, coords.longitude);
+        })
+        //отписаться от получения новых данных о местоположении
+        navigator.geolocation.clearWatch(watchId)
+
+
+        // Точная настройка позиционирования
+        // getCurrentPosition() и watchPosition() принимают третьим параметром необязательный
+        // объект PositionOptions со следующими полями:
+        // 1. enableHighAccuracy (Boolean) — высокая точность определения позиции.
+        // 2. maximumAge (Number) — максимальное время кеширования в миллисекундах. При
+        // повторных запросах, пока время не вышло, будет возвращаться кешированное
+        // значение, a после браузер будет запрашивать актуальные данные.
+        // 3. timeout (Number) — максимальное время ожидания ответа при определении позиции.
+        // Через сколько миллисекунд будет вызван обработчик ошибки.
+
+        // Обработка ошибок
+        // Callback-функция обработки ошибок, если она была передана в getCurrentPosition() или
+        // watchPosition(), ожидает экземпляр объекта GeolocationPositionError в качестве первого
+        // аргумента. Он будет содержать два свойства:
+        // ● code — значение, которое указывает, какая именно ошибка произошла;
+        // ● message — понятное для человека описание значения code.
+
+
+        const handlePositionError = (error) => {
+            switch(error.code) {
+                case 1: 
+                    console.log('Пользователь ограничил доступ к местоположению');
+                    break
+                case 2: 
+                    console.log('ошибка устройства определения местоположения');
+                    break;
+                case 3:
+                    console.log('достигнут тайм аут');
+                    break;
+                case 4: 
+                    console.log('извините местоположение не доступно');
+                    break
+            }
+        }
+    </script>
+</body>
+</html>

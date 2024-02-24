@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Тестирование видеоплеера</h1>
+      <video class="video" src="img/video.mp4"></video>
+      <input type="range" class="timing" value="0" step="0.001">
+      <img class="image_play" src="img/Play.svg" alt="photo play">
+      <img class="image_pause" src="img/Pause.svg" alt="photo pause">
+      <!-- <img class="image_progress" src="img/ProgressBar.svg" alt="progress bar">
+      <img class="image_time" src="img/Time.svg" alt="time"> -->
+      <input type="range" class="volume" min="0" max="100" step="1" value="30">
+      <div class="current_time"></div>
+    </div>
+
+    <script>
+      const videoElement = document.querySelector(".video");
+      const playElement = document.querySelector('.image_play');
+      const pauseElement = document.querySelector('.image_pause');
+      const volumeElement = document.querySelector('.volume');
+      const timingElement = document.querySelector('.timing');
+      const currentTimeEl = document.querySelector('.current_time');
+
+      playElement.addEventListener('click', function (e) {
+        videoElement.play();
+      });
+      pauseElement.addEventListener('click', function (e) {
+        videoElement.pause();
+      });
+      volumeElement.addEventListener('input', function (e) {
+        videoElement.volume = videoElement.value;
+      });
+
+    //   videoElement.addEventListener('timeupdate', function (e) {
+        
+    //   });
+
+    timingElement.addEventListener('input', function (e) {
+        videoElement.currentTimeEl = (timingElement.value / 100) * videoElement.duration
+    });
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+       
+        margin: 2em;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .box {
+        border: 3px solid #666;
+        background-color: #ddd;
+        border-radius: 0.5em;
+        padding: 10px;
+        cursor: move;
+        /* Обратите внимание, что единственное CSS-правило, связанное с функциональностью DnD, — это свойство cursor: move. */
+      }
+
+      .over {
+        border: 3px dotted #666;
+      }
+
+      [draggable] {
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" draggable="true">A</div>
+      <div class="box" draggable="true">B</div>
+      <div class="box" draggable="true">C</div>
+    </div>
+
+    <script>
+      // Использование Drag and Drop API
+      // API перетаскивания HTML5 DnD API позволяет сделать практически любой элемент на нашей cтранице перетаскиваемым. В большинстве браузероввыделенный текст, изображения и ссылки по умолчанию перетаскиваются.
+
+      // Прослушивание событий перетаскивания
+      // Есть ряд событий, к которым можно привязать мониторинг всего процесса перетаскивания:
+      // 1. dragstart — срабатывает, когда пользователь начал перетаскивать элемент.
+      // 2. drag — срабатывает каждые несколько сотен миллисекунд, пока длится перетаскивание элемента
+      // или выделение текста.
+      // 3. dragenter — срабатывает, когда перетаскиваемый элемент попадает в допустимую цель сброса.
+      // 4. dragleave — срабатывает, когда перетаскиваемый элемент покидает допустимую цель сброса.
+      // 5. dragover — срабатывает каждые несколько сотен миллисекунд, когда элемент перетаскивается
+      // над допустимой целью сброса.
+      // 6. drop — срабатывает, когда элемент сбрасывается в допустимую зону сброса.
+      // 7. dragend — срабатывает в момент завершения перетаскивания, например, при отпускании кнопки
+      // мыши или по нажатию Escape.
+
+      // Чтобы корректно обрабатывать DnD-процесс, нам потребуется:
+      // ● исходный элемент (source element), откуда начинается перетаскивание;
+      // ● объект с данными (data payload) — структура, которую мы перетаскиваем;
+      // ● целевой элемент (target) — область, в которую мы «ловим» перетащенный объект.
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        //загрузка страницы
+        let dragSrcEl = null; //переменнная элемента
+
+        function handleDragStart(e) {
+          this.style.opacity = "0.4";
+
+          dragSrcEl = this;
+          console.log(dragSrcEl);
+
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/html', this.innerHTML);
+        }
+
+        function handleDrugOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault(); //остановить обработку событий если это ссылка
+            }
+            e.dataTransfer.dropEffect = 'move' //функционал dnd
+
+            return false;
+        }
+
+        function handleDragEnter (e) {
+            this.classList.add('over'); //добавляем класс при наведение на элемент
+        }
+
+        function handleDragLeave (e) {
+            this.classList.remove('over'); //удаляем класс
+        }
+
+        function handleDrop (e) {
+            if (e.stopPropagation) {
+                e.stopPropagation(); //останаливает перенаправление браузера
+            } 
+
+            if (dragSrcEl != this) {
+                dragSrcEl.innerHTML = this.innerHTML; //добавляем новый html
+                this.innerHTML = e.dataTransfer.getData('text/html');
+            }
+
+            return false;
+        }
+
+        function handleDragEnd (e)  {
+          this.style.opacity = "1"; // прозрачность при отмемне
+
+          items.forEach(item => {
+            item.classList.remove('over'); //очистка класса
+          });
+
+        };
+
+        let items = document.querySelectorAll('.box');
+
+        items.forEach((item) => {
+          item.addEventListener('dragstart', handleDragStart);
+          item.addEventListener('dragenter', handleDragEnter);
+          item.addEventListener('dragover', handleDrugOver);
+          item.addEventListener('dragleave', handleDragLeave);
+          item.addEventListener('drop', handleDrop);
+          item.addEventListener('dragend', handleDragEnd);
+        });
+
+      });
+    </script>
+  </body>
+</html>
